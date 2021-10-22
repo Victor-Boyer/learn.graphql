@@ -4,6 +4,7 @@ import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { users, createUser, updateUser, deleteUser } from "./resolvers/user";
 import {
   posts,
+  getOnePost,
   createPost,
   updatePost,
   deletePost,
@@ -19,6 +20,12 @@ import {
     Query: {
       users,
       posts,
+      getOnePost(_: any, payload: any) {
+        return getOnePost(payload);
+      },
+      getOneComment(_: any, payload: any) {
+        return getOnePost(payload);
+      },
     },
     Mutation: {
       createUser(_: any, payload: any) {

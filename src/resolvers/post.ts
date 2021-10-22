@@ -8,6 +8,21 @@ export async function posts() {
   return allPosts;
 }
 
+export async function getOnePost({ id }: any) {
+  try {
+    const post = await prisma.post.findUnique({
+      where: { id },
+      include: { author: true, Post: true },
+    });
+    console.log(post);
+
+    return post;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
 export async function createPost({ input }: any) {
   try {
     console.log("[...creating_post...]");

@@ -5,8 +5,8 @@ type Post {
   author: User
   content: String
   comments: [Post]
-  createAt: Date!
-  updateAt: Date
+  createdAt: Date!
+  updatedAt: Date
 }
 
 scalar Date

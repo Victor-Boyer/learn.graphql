@@ -1,0 +1,10 @@
+# import Post from "../Post/post.graphql"
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  Post: [Post]!
+}

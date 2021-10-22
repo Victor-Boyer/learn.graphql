@@ -1,0 +1,14 @@
+# import User from "./user.graphql"
+
+input UserInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  createUser(input: UserInput): User!
+  updateUser(input: UserInput): User!
+  deleteUser(email: String): User!
+}

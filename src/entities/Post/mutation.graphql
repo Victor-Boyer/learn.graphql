@@ -1,0 +1,20 @@
+# import Post from "./post.graphql"
+# import User from "../User/user.graphql"
+
+input PostInput {
+  id: ID
+  author: String
+  content: String
+  comments: [String]
+  postId: ID
+}
+
+type Mutation {
+  createPost(input: PostInput): Post
+  updatePost(input: PostInput): Post
+  deletePost(id: Int): Post
+
+  createComment(input: PostInput): Post
+  updateComment(input: PostInput): Post
+  deleteComment(id: Int): Post
+}
